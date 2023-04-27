@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>文件传输</title><style>* {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                padding: 12px;
+            }
+
+            #flag {
+                cursor: pointer;
+            }
+
+            #status > span {
+                display: none;
+            }
+
+            #status > .socket-disconnected {
+                color: gray;
+            }
+
+            #status > .socket-connecting {
+                color: blue;
+            }
+
+            #status > .socket-connected {
+                color: green;
+            }
+
+            #status > .rtc-connecting {
+                color: blue;
+            }
+
+            #status > .rtc-connected {
+                color: green;
+            }
+
+            #fileArea {
+                display: none;
+            }
+
+            .fileList {
+                width: 100%;
+                list-style-type: decimal;
+            }
+
+            .fileList > .percent {
+                position: relative;
+                height: 22px;
+                border: 1px solid black;
+                margin: 8px 0;
+                font-size: 12px;
+            }
+
+            .fileList > .percent > .bar {
+                position: relative;
+                z-index: 0;
+                width: 0%;
+                height: 100%;
+                padding: 0 8px;
+                background-color: gray;
+                font-size: inherit;
+            }
+
+            .fileList > .percent > .text {
+                position: absolute;
+                z-index: 1;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                padding: 0 8px;
+                max-width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                pointer-events: none;
+                font-size: inherit;
+            }
+
+            #receiveList > .percent {
+                cursor: pointer;
+            }</style><script defer="defer" src="./scripts/bundle.js"></script></head><body><h2><p>当前页面ID（点击ID复制）：</p><p id="flag"></p></h2><hr/><h2>输入对方页面ID： <input id="otherFlag"/><button id="otherFlagBtn">确认</button></h2><hr/><p id="status"><span class="socket-disconnected">WebSocket未连接</span> <span class="socket-connecting">WebSocket连接中...</span> <span class="socket-connected">WebSocket连接成功</span> <span class="rtc-connecting">WebRTC连接中...</span> <span class="rtc-connected">WebRTC连接成功</span></p><hr/><div id="fileArea"><div><h2>向对方传输文件</h2><p><input id="uploadFile" type="file"/></p><h4>发送列表：</h4><ul id="sendList" class="fileList"></ul></div><hr/><div><h2>接收对方文件</h2><h4>接收列表：</h4><ul id="receiveList" class="fileList"></ul></div><hr/></div></body></html>
