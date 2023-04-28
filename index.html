@@ -55,6 +55,7 @@
             .fileList > .percent > .bar {
                 position: relative;
                 z-index: 0;
+                display: block;
                 width: 0%;
                 height: 100%;
                 padding: 0 8px;
@@ -75,8 +76,4 @@
                 text-overflow: ellipsis;
                 pointer-events: none;
                 font-size: inherit;
-            }
-
-            #receiveList > .percent {
-                cursor: pointer;
             }</style><script defer="defer" src="./scripts/bundle.js"></script></head><body><h2><p>当前页面ID（点击ID复制）：</p><p id="flag"></p></h2><hr/><h2>输入对方页面ID： <input id="otherFlag"/><button id="otherFlagBtn">确认</button></h2><hr/><p id="status"><span class="socket-disconnected">WebSocket未连接</span> <span class="socket-connecting">WebSocket连接中...</span> <span class="socket-connected">WebSocket连接成功</span> <span class="rtc-connecting">WebRTC连接中...</span> <span class="rtc-connected">WebRTC连接成功</span></p><hr/><div id="fileArea"><div><h2>向对方传输文件</h2><p><input id="uploadFile" type="file"/></p><h4>发送列表：</h4><ul id="sendList" class="fileList"></ul></div><hr/><div><h2>接收对方文件</h2><h4>接收列表：</h4><ul id="receiveList" class="fileList"></ul></div><hr/></div></body></html>
