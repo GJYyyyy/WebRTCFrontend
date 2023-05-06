@@ -11,32 +11,46 @@
                 cursor: pointer;
             }
 
-            #status > span {
+            #state > span {
                 display: none;
             }
 
-            #status > .socket-disconnected {
+            #state > .wsdisconnected {
                 color: gray;
             }
 
-            #status > .socket-connecting {
+            #state > .wsconnecting {
                 color: blue;
             }
 
-            #status > .socket-connected {
+            #state > .wsconnected {
                 color: green;
             }
 
-            #status > .rtc-connecting {
+            #state > .pcconnecting {
                 color: blue;
             }
 
-            #status > .rtc-connected {
+            #state > .pcconnected {
                 color: green;
+            }
+
+            #log {
+                height: 10vh;
+                min-height: 50px;
+                overflow-y: auto;
+            }
+
+            #userArea {
+                display: none;
             }
 
             #fileArea {
                 display: none;
+            }
+
+            #fileArea > div {
+                justify-content: space-between;
             }
 
             .fileList {
@@ -76,4 +90,4 @@
                 text-overflow: ellipsis;
                 pointer-events: none;
                 font-size: inherit;
-            }</style><script defer="defer" src="./scripts/bundle.js"></script></head><body><h2><p>当前页面ID（点击ID复制）：</p><p id="flag"></p></h2><hr/><h2>输入对方页面ID： <input id="otherFlag"/><button id="otherFlagBtn">确认</button></h2><hr/><p id="status"><span class="socket-disconnected">WebSocket未连接</span> <span class="socket-connecting">WebSocket连接中...</span> <span class="socket-connected">WebSocket连接成功</span> <span class="rtc-connecting">WebRTC连接中...</span> <span class="rtc-connected">WebRTC连接成功</span></p><hr/><div id="fileArea"><div><h2>向对方传输文件</h2><p><input id="uploadFile" type="file"/></p><h4>发送列表：</h4><ul id="sendList" class="fileList"></ul></div><hr/><div><h2>接收对方文件</h2><h4>接收列表：</h4><ul id="receiveList" class="fileList"></ul></div><hr/></div></body></html>
+            }</style><script defer="defer" src="./scripts/bundle.js"></script></head><body><h3>状态<p id="state"><span class="wsdisconnected">WebSocket未连接</span> <span class="wsconnecting">WebSocket连接中...</span> <span class="wsconnected">WebSocket连接成功</span> <span class="pcconnecting">WebRTC连接中...</span> <span class="pcconnected">WebRTC连接成功</span></p><hr/><h3>日志<div id="log"></div><hr/><div id="userArea"><h3><p>当前页面ID（点击ID复制）：</p><p id="flag"></p><hr/><h3>输入对方页面ID： <input id="flagRemote"/><button id="flagRemoteBtn">确认</button><hr/><div id="fileArea"><button id="abort">中止发送</button><hr/><div><h3>向对方传输文件<p><input id="uploadFile" type="file"/></p><h4>发送列表：</h4><ul id="sendList" class="fileList"></ul></h3></div><hr/><div><h3>接收对方文件<h4>接收列表：</h4><ul id="receiveList" class="fileList"></ul></h3></div></div></h3></h3></div></h3></h3></body></html>
